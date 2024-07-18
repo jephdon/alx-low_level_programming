@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- * Return
+ * Return: Alwaus 0 (Success)
  */
 int main(void)
 {
