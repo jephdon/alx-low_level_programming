@@ -8,7 +8,7 @@
 int main(void)
 {
 	int a = 1, b = 2;
-	long int f = 0;
+	unsigned long int f = 0;
 	int i = 2;
 
 	printf("%d, %d", a, b);
