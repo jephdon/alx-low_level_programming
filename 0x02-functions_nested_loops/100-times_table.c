@@ -11,7 +11,7 @@ void print_times_table(int n)
 {
 	int i = 0, j, m;
 
-	while (i <= n && n > 0 && n < 16)
+	while (i <= n && n >= 0 && n < 16)
 	{
 		j = 0;
 		while (j <= n)
