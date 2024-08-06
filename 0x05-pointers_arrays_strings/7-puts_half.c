@@ -11,7 +11,7 @@ void puts_half(char *str)
 	int i = 0, length = 0;
 
 	/* Calculate the length of string*/
-	while (str[length] != '\0' && str[length] != '\n')
+	while (str[length] != '\0')
 	{
 		length++;
 	}
