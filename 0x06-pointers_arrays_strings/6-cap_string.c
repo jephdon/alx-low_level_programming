@@ -26,8 +26,8 @@ char *cap_string(char *ptr)
 				if (ptr[i + 1] >= 'a' && ptr[i + 1] <= 'z')
 				{
 					ptr[i + 1] -= 32;
-					break;
 				}
+				break;
 			}
 		}
 	}
