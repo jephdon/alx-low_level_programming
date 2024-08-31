@@ -11,6 +11,11 @@ char *cap_string(char *ptr)
 	int i, j;
 	char wsp[] = " !,.?;(){}\"\n\t";
 
+	/* Capitalize the first word of the stribg */
+	if (ptr[0] >= 'a' && ptr[0] <= 'z')
+	{
+		ptr[0] -= 32;
+	}
 	/* Capitalize all words after a separator */
 	for (i = 0; ptr[i] != '\0'; i++)
 	{
