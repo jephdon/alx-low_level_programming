@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[] __attribute__((unused)))
 {
-	int i = 0, count = 0;
+	int i = 1, count = 0;
 
 	while (i < argc)
 	{
