@@ -12,6 +12,13 @@ int main(int argc, char *argv[])
 {
 	int i = 1, add = 0;
 
+	if (argc == 0)
+	{
+		printf("0\n");
+		return (0);
+	
+	return (0);
+	}
 	while (i < argc)
 	{
 		if (atoi(argv[i]) >= 0)
