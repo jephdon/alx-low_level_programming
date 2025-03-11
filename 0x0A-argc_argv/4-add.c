@@ -6,31 +6,40 @@
  * @argc: argument count
  * @argv: argument vector
  *
- * Return: 0 (success)
+ * Return: 0 (success), 1 otherwise
  */
 int main(int argc, char *argv[])
 {
 	int i = 1, add = 0;
 
-	if (argc == 0)
+	if (argc == 1)
 	{
 		printf("0\n");
 		return (0);
-	
-	return (0);
 	}
 	while (i < argc)
 	{
-		if (atoi(argv[i]) >= 0)
+		char *s = argv[i];
+		int digit = 0;
+		int j = 0;
+
+		if (s[i] == '+')
+			j++;
+		while (s[j] != '\0')
 		{
-			add += atoi(argv[i]);
-			i++;
+			if (s[j] >= '0' && s[j] <= '9')
+			{
+				digit = 1;
+				j++;
+			}
+			if (s[j] != '\0' || !digit)
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		else
-		{
-			printf("Error\n");
-			return (0);
-		}
+		add += atoi(argv[i]);
+		i++;
 	}
 	printf("%d\n", add);
 	return (0);
