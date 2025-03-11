@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 
 	while (i < argc)
 	{
-		if (atoi(argv[i]) <= 0 || atoi(argv[i]) >= 0)
+		if (atoi(argv[i]) >= 0)
 		{
 			add += atoi(argv[i]);
 			i++;
