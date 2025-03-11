@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 		int digit = 0;
 		int j = 0;
 
-		if (s[i] == '+')
+		if (s[0] == '+')
 			j++;
 		while (s[j] != '\0')
 		{
@@ -32,11 +32,16 @@ int main(int argc, char *argv[])
 				digit = 1;
 				j++;
 			}
-			if (s[j] != '\0' || !digit)
+			else
 			{
 				printf("Error\n");
 				return (1);
 			}
+		}
+		if (!digit)
+		{
+			printf("Error\n");
+			return (1);
 		}
 		add += atoi(argv[i]);
 		i++;
