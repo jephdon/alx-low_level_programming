@@ -9,7 +9,19 @@
  */
 void free_dog(dog_t *d)
 {
+	if (d == NULL)
+		return;
+	if (d->name == NULL)
+	{
+		free(d);
+		return;
+	}
 	free(d->name);
+	if (d->owner == NULL)
+	{
+		free(d);
+		return;
+	}
 	free(d->owner);
 	free(d);
 }
