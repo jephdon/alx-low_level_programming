@@ -28,10 +28,10 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 	func = get_op_func(operator);
-	if (func == NULL)
+	if ((operator[0] == '/' || operator[0] == '%') && num2 == 0)
 	{
 		printf("Error\n");
-		exit(99);
+		exit(100);
 	}
 	printf("%d\n", func(num1, num2));
 	return (0);
