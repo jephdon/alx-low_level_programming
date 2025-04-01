@@ -45,10 +45,7 @@ void print_string(va_list ap)
 {
 	char *s = va_arg(ap, char *);
 
-	if (s == NULL)
-		printf("(nil)");
-	else
-		printf("%s", s);
+	printf("%s", s == NULL ? "(nil)" : s);
 }
 
 /**
@@ -70,6 +67,12 @@ void print_all(const char * const format, ...)
 	const char *fmt = format;
 	int i, first = 1;
 
+	if (fmt == NULL || *fmt == '\0')
+	{
+		printf("\n");
+		va_end(ap);
+		return;
+	}
 	va_start(ap, format);
 	while (*fmt)
 	{
