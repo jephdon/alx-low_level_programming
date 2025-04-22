@@ -17,7 +17,7 @@ void print_binary(unsigned long int n)
 		return;
 	}
 	/* starts mask at the highest bit (bit 63 for unsigned long int) */
-	mask = 1UL << 62;
+	mask = 1UL << 63;
 	while (mask > 0)
 	{
 		if (n & mask)
