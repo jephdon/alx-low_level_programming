@@ -24,3 +24,6 @@ gcc -c -fPIC _strstr.c -o _strstr.o
 
 # Link all object files into a shared library
 gcc -shared -o liball.so *.o
+
+# Remove the .o files to clean up
+rm *.o
