@@ -13,10 +13,16 @@ list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new_node;
 	char *str_copy;
+	unsigned int len = 0, i = 0;
 
-	/* Check if the string is NULL */
+	/* Calculate string length */
 	if (str == NULL)
 		return (NULL);
+	while (str[i] != '\0')
+	{
+		len++;
+		i++;
+	}
 
 	/* Make a copy of the string */
 	str_copy = strdup(str);
@@ -33,7 +39,7 @@ list_t *add_node(list_t **head, const char *str)
 
 	/* Fill the new node with info */
 	new_node->str = str_copy;
-	new_node->len = strlen(str_copy);
+	new_node->len = len;
 	new_node->next = *head; /* Link it to the old head */
 
 	/* Make the new node the new head */
