@@ -15,17 +15,12 @@ list_t *add_node_end(list_t **head, const char *str)
 	list_t *current;
 	char *str_copy;
 
-	/* Check if the string is NULL */
-	if (str == NULL)
+	if (str == NULL) /* Check if the string is NULL */
 		return (NULL);
-
-	/* Duplicate the string */
-	str_copy = strdup(str);
+	str_copy = strdup(str);  /* Duplicate the string */
 	if (str_copy == NULL)
 		return (NULL);
-
-	/* Allocate memory for the new node */
-	new_node = malloc(sizeof(list_t));
+	new_node = malloc(sizeof(list_t)); /* Allocate memory for the new node */
 	if (new_node == NULL)
 	{
 		free(str_copy);
