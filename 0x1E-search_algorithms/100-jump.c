@@ -26,10 +26,13 @@ int jump_search(int *array, size_t size, int value)
 		printf("Value checked array[%lu] = [%d]\n", prev, array[prev]);
 		prev += step;
 	}
-	/* Figure out the section to search */
-	start = (prev < step) ? 0 : prev - step; /* Start of the section */
-	end = (prev < size) ? prev : size - 1; /* End of the section */
-	/* Tell the user where we're looking */
+	/* If prev overshoots, adjust it to the last index */
+	if (prev >= size)
+		prev = size - 1;
+	/* Define the section */
+	start = (prev < step) ? 0 : prev - step;
+	end = (prev < size) ? prev : size - 1;
+	/* Print the section */
 	printf("Value found between indexes [%lu] and [%lu]\n", start, end);
 	/* Check each element in the section */
 	i = start;
