@@ -24,18 +24,15 @@ int create_file(const char *filename, char *text_content)
 	fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, mode);
 	if (fd == -1)
 		return (-1);
-	/* If text_content is NULL, create an empty file */
-	if (text_content == NULL)
+	/* Write text_content only if it's not NULL */
+	if (text_content != NULL)
 	{
-		close(fd);
-		return (-1);
-	}
-	/* Write the content to the file */
-	n_written = write(fd, text_content, strlen(text_content));
-	if (n_written == -1 || (size_t)n_written != strlen(text_content))
-	{
-		close(fd);
-		return (-1);
+		n_written = write(fd, text_content, strlen(text_content));
+		if (n_written == -1 || (size_t)n_written != strlen(text_content))
+		{
+			close(fd);
+			return (-1); /* Write failed */
+		}
 	}
 	close(fd);
 	return (1);
