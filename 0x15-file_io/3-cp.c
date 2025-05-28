@@ -1,11 +1,4 @@
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <errno.h>
-#include <string.h>
-#include <stdio.h>
-
-#define BUFFER_SIZE 1024
+#include "main.h"
 
 /**
  * main - Appends texts at the end of a file
@@ -19,9 +12,8 @@ int main(int argc, char **argv)
 	int fd_from, fd_to;
 	ssize_t n_read, n_written;
 	char buf[BUFFER_SIZE];
-	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH; /* rw-rw-- */
+	mode_t mode = 0664; /* rw-rw-r-- permissions */
 
-	/* Check if there are exactly 3 arguments */
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
