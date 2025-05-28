@@ -16,7 +16,7 @@ int create_file(const char *filename, char *text_content)
 {
 	int fd;			/* File descriptor */
 	ssize_t n_written;
-	mode_t mode = S_IRUSR | S_IWUSR; /* Premissions: rw------ */
+	mode_t mode = 0600; /* Premissions: rw------ */
 
 	if (filename == NULL)
 		return (-1);
